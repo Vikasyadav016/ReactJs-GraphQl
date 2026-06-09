@@ -1,29 +1,60 @@
 const { gql } = require('graphql-tag');
 
 module.exports = gql`
-  type User {
+  type Student {
     id: ID!
     name: String!
     email: String!
+    age: Int!
+    course: String!
   }
 
-  input SignupInput {
+  input StudentCreateInput {
     name: String!
     email: String!
-    password: String!
+    age: Int!
+    course: String!
   }
 
-  type SignupResponse {
-    success: Boolean!
-    message: String!
-    user: User
+  input StudentUpdateInput {
+    name: String
+    email: String
+    age: Int
+    course: String
+  }
+
+  type Book {
+    id: ID!
+    title: String!
+    author: String!
+    publishedYear: Int!
+  }
+
+  input BookCreateInput {
+    title: String!
+    author: String!
+    publishedYear: Int!
+  }
+
+  input BookUpdateInput {
+    title: String
+    author: String
+    publishedYear: Int
   }
 
   type Query {
-    users: [User!]!
+    students: [Student!]!
+    student(id: ID!): Student
+    books: [Book!]!
+    book(id: ID!): Book
   }
 
   type Mutation {
-    signup(input: SignupInput!): SignupResponse!
+    createStudent(input: StudentCreateInput!): Student!
+    updateStudent(id: ID!, input: StudentUpdateInput!): Student!
+    deleteStudent(id: ID!): Boolean!
+    createBook(input: BookCreateInput!): Book!
+    updateBook(id: ID!, input: BookUpdateInput!): Book!
+    deleteBook(id: ID!): Boolean!
   }
 `;

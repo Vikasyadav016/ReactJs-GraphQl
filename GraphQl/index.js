@@ -2,6 +2,7 @@ const { ApolloServer } = require('@apollo/server');
 const { startStandaloneServer } = require('@apollo/server/standalone');
 const typeDefs = require('./schema');
 const resolvers = require('./resolvers');
+const { server: serverConfig } = require('./config/config');
 
 async function startServer() {
   const server = new ApolloServer({
@@ -10,7 +11,7 @@ async function startServer() {
   });
 
   const { url } = await startStandaloneServer(server, {
-    listen: { port: 4000 },
+    listen: { port: serverConfig.port },
     context: async ({ req }) => ({ req }),
   });
 

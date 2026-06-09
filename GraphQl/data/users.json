@@ -4,5 +4,11 @@
     "name": "Test User",
     "email": "testuser@example.com",
     "password": "$2a$10$ldciKGUY4fVceR.ue7NCi.wJuupnS6ItJM8ypKXrbfKb.aSV2bhZ6"
+  },
+  {
+    "id": "82917814-a62b-4162-b92b-a7ebd28d23c1",
+    "name": "AK",
+    "email": "ak@gmail.com",
+    "password": "$2a$10$fqf6yeyYDQhHDfZnffGNDemXYN.sssIRqk63AYDed6Z2T9LbKAYn2"
   }
 ]

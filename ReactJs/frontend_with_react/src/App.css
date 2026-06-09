@@ -1,38 +1,127 @@
 .App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
   min-height: 100vh;
   display: flex;
-  flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  background: linear-gradient(180deg, #0d1b2a 0%, #1b2a47 100%);
+  color: #f8fafc;
+  padding: 24px;
 }
 
-.App-link {
-  color: #61dafb;
+.landing-page,
+.signup-page {
+  width: 100%;
+  max-width: 520px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.card {
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 20px;
+  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.25);
+  backdrop-filter: blur(18px);
+  padding: 32px;
+}
+
+.page-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 24px;
+}
+
+.page-header h1,
+.card h1 {
+  margin: 0 0 8px;
+  font-size: 2rem;
+}
+
+.card p {
+  margin: 0;
+  line-height: 1.7;
+  color: #dce7f5;
+}
+
+.primary-button,
+.text-button {
+  cursor: pointer;
+  border: none;
+  border-radius: 999px;
+  font-weight: 700;
+}
+
+.primary-button {
+  background: #4f9dff;
+  color: #fff;
+  padding: 14px 24px;
+  transition: transform 0.2s ease, background 0.2s ease;
+}
+
+.primary-button:hover:not(:disabled) {
+  transform: translateY(-1px);
+  background: #3978d2;
+}
+
+.primary-button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.text-button {
+  background: transparent;
+  color: #a8c1ff;
+  padding: 10px 14px;
+}
+
+.form-card label {
+  display: block;
+  margin-bottom: 18px;
+  color: #dbe9ff;
+  font-weight: 600;
+}
+
+.form-card input {
+  width: 100%;
+  margin-top: 8px;
+  padding: 14px 16px;
+  border-radius: 14px;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  background: rgba(255, 255, 255, 0.08);
+  color: #f8fafc;
+  outline: none;
+}
+
+.form-card input:focus {
+  border-color: #4f9dff;
+  box-shadow: 0 0 0 4px rgba(79, 157, 255, 0.14);
+}
+
+.result-message {
+  margin-top: 22px;
+  padding: 18px 20px;
+  border-radius: 14px;
+  font-weight: 600;
+}
+
+.result-message.success {
+  background: rgba(56, 189, 248, 0.15);
+  color: #b8f1ff;
+  border: 1px solid rgba(56, 189, 248, 0.35);
+}
+
+.result-message.error {
+  background: rgba(248, 113, 113, 0.14);
+  color: #ffe3e3;
+  border: 1px solid rgba(248, 113, 113, 0.35);
+}
+
+.user-details {
+  margin-top: 12px;
+  font-size: 0.95rem;
+  color: #e8f6ff;
+}
+
+.user-details p {
+  margin: 8px 0 0;
 }
